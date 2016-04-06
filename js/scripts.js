@@ -3,34 +3,48 @@ function Player(teamChoice, playerName){
   this.user = playerName; //persons name so later we can say "" its your turn
 
 }
-function BoardCombinations(a,b,c){
-  1,2,3
-  4,5,6
-  7,8,9
-  1,4,7
-  2,5,8
-  3,6,9
-  1,5,9
-  3,5,7
 
-}
-Player.prototype = {
-
-  Constructor: Player,
-
-  setTurn: function(firstName,secondName){
+Player.prototype.turn = function(){
     var firstName = userOne;
     var secondName = userTwo;
     firstName = "X";
     secondName = "O";
     turn = "X";
     console.log(turn);
-  },
+}
+Player.prototype.switchTurn = function(){
+
+
+
 
 
 }
+Player.prototype.message = function(){
 
 
+
+
+}
+function Board(){
+}
+Board.prototype.checkCombinations = function(){
+
+
+
+
+}
+Board.prototype.gameOver = function(){
+
+
+
+
+}
+Board.prototype.reset = function(){
+
+
+
+
+}
 $(document).ready(function(){
   $("button#submit").click(function(event){
     event.preventDefault();
@@ -45,14 +59,15 @@ $(document).ready(function(){
     console.log(userTwo);
     $("#form").hide();
     $("#table").show();
-    setTurn(userOne,userTwo);
-
-
-
   });
+  $('#1').click(function(){
+    var y = "fuck you";
+    $("#1").text(y);
+  });
+  $(".square").click(function(){
+    $(this).text("shit");
+  })
 });
-
-
 
 /*
 function Board(){
