@@ -1,99 +1,78 @@
+
+////////////////////////////////////////////////
+//GLOBAL VARIABLES/////////////////////////////
+////////////////////////////////////////////////
+
+var playerOne = new Object; // player objects with values passed on from click function
+var playerTwo = new Object; // player objects with values passed on from click function
+var turn = new Object;
+
+////////////////////////////////////////////////
+//CONSTRUCTION ZONE/////////////////////////////
+////////////////////////////////////////////////
+
+function Board(squareOne, squareTwo, SquareThree){
+}
 function Player(teamChoice, playerName){
-  this.team = teamChoice; //x or o
-  this.user = playerName; //persons name so later we can say "" its your turn
-
+  this.team = teamChoice; // x or o
+  this.user = playerName; // persons name so later we can say "" its your turn
+}
+////////////////////////////////////////////////
+//PROTO / Function Junction/////////////////////
+////////////////////////////////////////////////
+function startGame(){
+  turn.playerOne == true;
+}
+function gameOver(){
+  $(".square").innerText == "";
 }
 
-Player.prototype.turn = function(){
-    var firstName = userOne;
-    var secondName = userTwo;
-    firstName = "X";
-    secondName = "O";
-    turn = "X";
-    console.log(turn);
+function message(message){
+  $(".message").text(playerOne.user + " , it's your turn!");
 }
-Player.prototype.switchTurn = function(){
-
-
-
-
-
+function switch(){
+  if(turn.playerOne == true){
+    turn.playerOne == false;
+    turn.playerTwo == true;
+  }else if(turn.playerTwo == true){
+    turn.playerTwo == false;
+    turn.playerOne == true;
 }
-Player.prototype.message = function(){
+function chooseSquare(square){
 
-
-
-
+  if(turn.playerOne this.square.innerText == playerOne.team ){
+    $(".square").innerText == playerOne.team;
+  }else if(this.square.innerText == playerTwo.team){
+  }else{
+  }
+  }else if($(".square").innerText == "X"){
+  }
 }
-function Board(){
-}
-Board.prototype.checkCombinations = function(){
+////////////////////////////////////////////////
+//EVENT LISTENERS//Front End////////////////////
+////////////////////////////////////////////////
 
-
-
-
-}
-Board.prototype.gameOver = function(){
-
-
-
-
-}
-Board.prototype.reset = function(){
-
-
-
-
-}
 $(document).ready(function(){
-  $("button#submit").click(function(event){
+  $("button#submit").click(function(event){ //onclick will create our player object upon global player vars
     event.preventDefault();
-    var playerOneName = $('#user-one').val(); // logs user1 input
-    var x = "X";
-    var userOne = new Player(x,playerOneName);
-    console.log(userOne);
-    var playerTwoName = $('#user-two').val();
-    var o = "O";
-    var userTwo = new Player(o,playerTwoName);
-    $(".message").text(userOne.user + " , it's your turn!");
-    console.log(userTwo);
+    var playerOneName = $('#user-one').val(); // stores our user values into a variable to pass on
+    var playerTwoName = $('#user-two').val(); // stores our user values into a variable to pass on
+    var x = "X";  // stores our team values into a variable to pass on
+    var o = "O";  // stores our team values into a variable to pass on
+    playerOne = new Player(x,playerOneName); // creates our player object with previous passed in values
+    playerTwo = new Player(o,playerTwoName); // creates our player object with previous passed in values
+    console.log(playerOne);
+    console.log(playerTwo);
+    $(".message").text(playerOne.user + " , it's your turn!");
     $("#form").hide();
     $("#table").show();
   });
   $('#1').click(function(){
-    var y = "fuck you";
-    $("#1").text(y);
+
+    $("#1").text("X");
   });
   $(".square").click(function(){
+
     $(this).text("shit");
   })
 });
-
-/*
-function Board(){
-
-}
-
-function startGame(){
-  newUser.turn = "x";
-}
-
-function message(msg){
-  $('.message').text("yo its your turn!");
-}
-
-function swithTurn(){
-    if(user.turn == "x"){
-      user.turn == "o";
-    }else{
-      user.turn == "x"
-    }
-    message();
-}
-
-Board.prototype.checkRow(){
-  sees if we have a weeener
-}
-Board.prototype.nextMove(square){
-
-}*/
